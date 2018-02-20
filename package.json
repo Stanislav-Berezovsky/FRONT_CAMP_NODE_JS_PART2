@@ -1,0 +1,27 @@
+{
+  "name": "front_camp_node_js_part2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node ./src/js/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stanislav-Berezovsky/FRONT_CAMP_NODE_JS_PART2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stanislav-Berezovsky/FRONT_CAMP_NODE_JS_PART2/issues"
+  },
+  "homepage": "https://github.com/Stanislav-Berezovsky/FRONT_CAMP_NODE_JS_PART2#readme",
+  "dependencies": {
+    "async": "2.6.0",
+    "express": "4.16.2",
+    "mongoose": "5.0.3",
+    "pug": "2.0.0-rc.4",
+    "ejs": "*"
+  }
+}
