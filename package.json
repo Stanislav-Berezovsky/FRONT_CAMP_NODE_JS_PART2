@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node ./src/js/app"
+    "start": "node ./src/js/app"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
     "mongoose": "5.0.3",
     "pug": "2.0.0-rc.4",
     "ejs": "*"
+  },
+  "devDependencies": {
+    "express-error-handler": "^1.1.0"
   }
 }

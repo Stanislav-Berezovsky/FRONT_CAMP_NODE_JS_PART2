@@ -1,36 +1,36 @@
-module.exports = (router, Blog) => {
-    router.post('/blogs', (req, res) => {
+module.exports = function (router, Blog) {
+    router.post('/blogs', function (req, res) {
         console.log('post');
 
-        Blog.create(JSON.parse(JSON.stringify(req.body)), (err, data) => {
-            res.json(req.body);
+        Blog.create(JSON.parse(JSON.stringify(req.body)), function (err, data) {
+            res.json(data);
         });
     });
-    router.get('/blogs', (req, res) => {
+    router.get('/blogs', function (req, res) {
         console.log('get');
 
-        Blog.find({}, (err, data) => {
-            res.json(data);
+        Blog.find({}, function (err, data) {
+            res.json(data ? data : {statusCode: "404"});
         });
     });
-    router.get('/blogs/:blogId', (req, res) => {
+    router.get('/blogs/:blogId', function (req, res) {
         console.log('getId');
 
-        Blog.find({ _id: req.params.blogId }, (err, data) => {
+        Blog.find({_id: req.params.blogId}, function (err, data) {
             res.json(data);
         });
     });
-    router.put('/blogs/:blogId', (req, res) => {
+    router.put('/blogs/:blogId', function (req, res) {
         console.log('put');
 
-        Blog.findByIdAndUpdate(req.params.blogId, JSON.parse(JSON.stringify(req.body)), (err, data) => {
-            res.json(data ? data : { status: "object not found" });
+        Blog.findByIdAndUpdate(req.params.blogId, JSON.parse(JSON.stringify(req.body)), function (err, data) {
+            res.json(data ? data : {status: "object not found"});
         });
     });
-    router.delete('/blogs/:blogId', (req, res) => {
+    router.delete('/blogs/:blogId', function (req, res) {
         console.log('delete');
 
-        Blog.findByIdAndRemove(req.params.blogId, (err, data) => {
+        Blog.findByIdAndRemove(req.params.blogId, function (err, data) {
             res.json({
                 data: data,
                 status: "ok"
@@ -38,7 +38,7 @@ module.exports = (router, Blog) => {
         });
     });
 
-    router.get('/other', (req, res) => {
+    router.get('/other', function (req, res) {
         console.log('other');
         res.json({
             "value": "other"

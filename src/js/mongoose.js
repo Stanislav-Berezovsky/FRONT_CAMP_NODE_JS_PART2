@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
 mongoose.connect("mongodb://localhost:27017/test", {
-    "socketOptions": {
-        "keepAlive": 1
+    "server": {
+        "socketOptions": {
+            "keepAlive": 1
+        }
     }
 });
 
